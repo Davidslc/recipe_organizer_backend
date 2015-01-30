@@ -26,9 +26,22 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
-# class Review(models.Model):
-#     recipe = models.ForeignKey(Recipe)
-#     review_recipe = models.TextField(blank=True, null=True, help_text="Review the recipe")
-#
-#     def __str__(self):
-#         return self.recipe
+
+class Review(models.Model):
+    recipe = models.ForeignKey(Recipe)
+    title = models.CharField(max_length=30)
+    reviews = models.TextField(help_text="Review the recipe")
+    star = models.PositiveIntegerField(blank=True, null=True)
+    username = models.CharField(max_length=20)
+
+    def __str__(self):
+        return "%s's review" % self.recipe
+
+
+class Comments(models.Model):
+    recipe = models.ForeignKey(Recipe)
+    text = models.TextField()
+    rating = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.text
