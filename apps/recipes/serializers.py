@@ -55,12 +55,10 @@ class RecipeSerializer(serializers.ModelSerializer):
 
         return recipe
 
-
     def get_reviews(self, obj):
         reviews = Review.objects.filter(recipe=obj.id)
         serializer = ReviewSerializer(reviews, many=True)
         return serializer.data
-
 
     def get_comments(self, current_recipe):
         comments = Comment.objects.filter(recipe=current_recipe.id)

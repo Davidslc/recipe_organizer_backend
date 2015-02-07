@@ -38,7 +38,7 @@ class Review(models.Model):
         return "%s's review" % self.recipe
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     recipe = models.ForeignKey(Recipe)
     text = models.TextField()
     rating = models.IntegerField(default=0)
