@@ -60,6 +60,10 @@ MEDIA_ROOT = '/Users/davidjohnson/dev/recipe_organizer/backend/apps/recipes/medi
 
 MEDIA_URL = '/media/'
 
+STATIC_ROOT = 'staticfiles'
+
+STATIC_URL = '/static/'
+
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
