@@ -54,7 +54,7 @@ docs/_build/
 
 # Custom
 .idea
-#db.sqlite3
+db.sqlite3
 .DS_Store
 *.orig
 /migrations
